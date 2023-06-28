@@ -72,7 +72,7 @@ emit Lotteryenter(msg.sender);
         override
         returns (bool upkeepNeeded, bytes memory /* performData */)
     {
-        bool isOpen = (LotterState.OPEN == s_lotterState);
+        bool isOpen = (LotteryState.OPEN == s_lotteryState);
         bool timePassed = ((block.timestamp - lastTimeStamp) > i_interval);
         bool hasPlayers = (s_players.length > 0);
         bool hasBalance = address(this).balanace > 0;
